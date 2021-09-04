@@ -21,12 +21,12 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
+
     NzLayoutModule,
     NzBreadCrumbModule,
     NzIconModule,
     NzMenuModule,
-    NzCollapseModule
+    NzCollapseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

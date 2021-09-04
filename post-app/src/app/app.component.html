@@ -4,23 +4,22 @@
     <ul nz-menu nzTheme="dark" nzMode="inline">
       <li nz-menu-item>
         <i nz-icon nzType="file"></i>
-        <span>File</span>
+        <span>Dashboard</span>
       </li>
       <li nz-menu-item>
         <i nz-icon nzType="file"></i>
-        <span>File</span>
+        <span>Posts</span>
       </li>
       <li nz-menu-item>
         <i nz-icon nzType="file"></i>
-        <span>File</span>
+        <span>Albums</span>
       </li>
     </ul>
   </nz-sider>
   <nz-layout>
     <nz-header>
-        <i nz-icon nzType="menu-unfold" nzTheme="outline"></i>
-      <!-- <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-        (click)="isCollapsed = !isCollapsed"></i> -->
+      <i class="trigger" nz-icon [nzType]="isCollapsed ? 'right' : 'left'"
+        (click)="isCollapsed = !isCollapsed"></i>
     </nz-header>
     <nz-content>
       <nz-breadcrumb>
