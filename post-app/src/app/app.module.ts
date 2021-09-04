@@ -11,22 +11,24 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BreadcrumsComponent } from './components/breadcrums/breadcrums.component';
-import { FooterComponent } from './components/footer/footer.component';
+
+import { PostModule } from './pages/post/post.module'
+import { AlbumModule } from './pages/album/album.module'
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent,
     BreadcrumsComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+
+    PostModule,
+    AlbumModule,
 
     NzLayoutModule,
     NzBreadCrumbModule,
