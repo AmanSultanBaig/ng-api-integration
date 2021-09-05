@@ -1,7 +1,7 @@
 <div style="display: flex; justify-content: center">
     <h1>All Posts</h1>
 </div>
-<div style="height: 400px; overflow-y: scroll">
+<div style="height: 400px; overflow-y: scroll" *ngIf="posts.length">
     <div nz-row [nzGutter]="8">
         <div *ngFor="let post of posts" nz-col [nzSpan]="8" style="cursor: pointer;margin-top: 1rem"
             (click)="viewSinglePost(post)">
@@ -10,4 +10,8 @@
             </nz-card>
         </div>
     </div>
+</div>
+
+<div *ngIf="!posts.length">
+    Loading...
 </div>
