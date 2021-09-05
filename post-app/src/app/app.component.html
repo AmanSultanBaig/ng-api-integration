@@ -2,16 +2,13 @@
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
-        <i nz-icon nzType="file"></i>
+      <li nz-menu-item nzSelected [routerLink]="['/dashboard']">
         <span>Dashboard</span>
       </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="file"></i>
+      <li nz-menu-item [routerLink]="['/posts/post-list']">
         <span>Posts</span>
       </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="file"></i>
+      <li nz-menu-item [routerLink]="['/albums/album-list']">
         <span>Albums</span>
       </li>
     </ul>
