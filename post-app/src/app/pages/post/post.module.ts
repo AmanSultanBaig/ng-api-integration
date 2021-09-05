@@ -6,13 +6,27 @@ import { PostCommentsComponent } from './post-comments/post-comments.component';
 
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: 'post-list',
+    component: PostListComponent
+  },
+  {
+    path: 'view-single-post',
+    component: SinglePostViewComponent
+  },
+];
+
 
 @NgModule({
   declarations: [PostListComponent, SinglePostViewComponent, PostCommentsComponent],
   imports: [
     CommonModule,
     NzCardModule,
-    NzGridModule
+    NzGridModule,
+    RouterModule.forChild(routes)
   ],
   exports: [PostListComponent, SinglePostViewComponent, PostCommentsComponent],
 })

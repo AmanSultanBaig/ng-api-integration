@@ -31,8 +31,9 @@
 
   .inner-content {
     padding: 24px;
-    background: #fff;
+    /* background: #fff; */
     min-height: 360px;
+    width: 100%
   }
 
   nz-footer {
