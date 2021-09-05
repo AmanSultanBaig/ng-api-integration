@@ -1,4 +1,4 @@
-<nz-layout *ngIf="!loading">
+<nz-layout>
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
@@ -23,15 +23,5 @@
         <router-outlet></router-outlet>
       </div>
     </nz-content>
-    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
   </nz-layout>
 </nz-layout>
-
-<div class="loading-overlay" *ngIf="loading">
-    <!-- show something fancy here, here with Angular 2 Material's loading bar or circle -->
-    <div class="spinner">
-      <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
-    </div>
-    <!-- <md-progress-bar mode="indeterminate"></md-progress-bar> -->
-    <!-- loading... -->
-</div>
