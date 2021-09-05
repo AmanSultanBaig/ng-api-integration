@@ -12,6 +12,9 @@ import { PostModule } from './pages/post/post.module'
 import { AlbumModule } from './pages/album/album.module';
 import { Page404Component } from './components/page404/page404.component'
 
+import { PostService } from './shared/post-service/post.service'
+import { AlbumService } from './shared/album-service/album.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,7 @@ import { Page404Component } from './components/page404/page404.component'
 
     AntdDesignModule
   ],
-  providers: [],
+  providers: [PostService, AlbumService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
