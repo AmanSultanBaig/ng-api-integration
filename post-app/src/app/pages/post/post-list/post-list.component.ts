@@ -22,7 +22,6 @@ export class PostListComponent implements OnInit {
     })
   }
 
-
   viewSinglePost(post) {
     this._utilService.singlePost.next(post)
     this.router.navigate(['/posts/view-single-post'])
