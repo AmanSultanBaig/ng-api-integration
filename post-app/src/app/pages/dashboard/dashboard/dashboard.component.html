@@ -1,13 +1,13 @@
 <div style="display: flex; justify-content: center">
     <nz-badge [nzCount]="5">
-        <a class="head-example">
+        <a class="head-example" [routerLink]="['/posts/post-list']">
             <div style="display: flex;justify-content: center">
                 <p style="color: #fff;text-align: center; margin-top: 25%">POSTS</p>
             </div>
         </a>
     </nz-badge>
     <nz-badge [nzCount]="0" nzShowZero>
-        <a class="head-example">
+        <a class="head-example" [routerLink]="['/albums/album-list']">
             <div style="display: flex;justify-content: center">
                 <p style="color: #fff;text-align: center; margin-top: 25%">ALBUMS</p>
             </div>
