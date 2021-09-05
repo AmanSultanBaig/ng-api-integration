@@ -3,10 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AlbumsListComponent } from './albums-list/albums-list.component';
 import { AlbumPicturesComponent } from './album-pictures/album-pictures.component';
 
-import { NzCardModule } from 'ng-zorro-antd/card';
-import { NzGridModule } from 'ng-zorro-antd/grid';
-
 import { Routes, RouterModule } from '@angular/router';
+import { AntdDesignModule } from '../../antd-design.module'
 
 const routes: Routes = [
   {
@@ -22,8 +20,7 @@ const routes: Routes = [
   declarations: [AlbumsListComponent, AlbumPicturesComponent],
   imports: [
     CommonModule,
-    NzCardModule,
-    NzGridModule,
+    AntdDesignModule,
     RouterModule.forChild(routes)
   ],
   exports: [AlbumsListComponent, AlbumPicturesComponent],

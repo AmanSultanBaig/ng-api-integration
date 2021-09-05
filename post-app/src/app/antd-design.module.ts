@@ -10,6 +10,13 @@ import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+
+import { NzCommentModule } from 'ng-zorro-antd/comment';
+import { NzListModule } from 'ng-zorro-antd/list';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -21,7 +28,12 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
     NzCollapseModule,
     NzResultModule,
     NzButtonModule,
-    NzSpinModule
+    NzSpinModule,
+    NzCardModule,
+    NzGridModule,
+    NzBadgeModule,
+    NzCommentModule,
+    NzListModule,
   ],
   exports: [
     CommonModule,
@@ -32,7 +44,12 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
     NzCollapseModule,
     NzResultModule,
     NzButtonModule,
-    NzSpinModule
+    NzSpinModule,
+    NzCardModule,
+    NzGridModule,
+    NzBadgeModule,
+    NzCommentModule,
+    NzListModule,
   ]
 })
 export class AntdDesignModule { }
