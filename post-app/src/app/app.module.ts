@@ -10,6 +10,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,7 +39,8 @@ import { Page404Component } from './components/page404/page404.component'
     NzMenuModule,
     NzCollapseModule,
     NzResultModule,
-    NzButtonModule
+    NzButtonModule,
+    NzSpinModule
   ],
   providers: [],
   bootstrap: [AppComponent]

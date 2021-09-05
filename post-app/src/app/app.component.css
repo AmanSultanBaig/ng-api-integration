@@ -39,3 +39,9 @@
   nz-footer {
     text-align: center;
   }
+
+  .spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%
+  }
