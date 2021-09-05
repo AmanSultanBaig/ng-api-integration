@@ -1,0 +1,12 @@
+nz-badge {
+    margin-right: 20px;
+  }
+
+  .head-example {
+    width: 10rem;
+    height: 100px;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, #0033cc 0%, #00cc99 100%);
+    display: inline-block;
+    vertical-align: middle;
+  }

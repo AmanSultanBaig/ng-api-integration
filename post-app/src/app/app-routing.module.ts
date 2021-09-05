@@ -20,7 +20,11 @@ const routes: Routes = [
     path: "albums",
     loadChildren: () => import('./pages/album/album.module').then(m => m.AlbumModule)
   },
-
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
   { path: "**", component: Page404Component }
 ];
 
