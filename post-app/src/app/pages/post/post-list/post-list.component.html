@@ -4,7 +4,7 @@
 <div style="height: 400px; overflow-y: scroll">
     <div nz-row [nzGutter]="8">
         <div *ngFor="let post of posts" nz-col [nzSpan]="8" style="cursor: pointer;margin-top: 1rem"
-            [routerLink]="['/posts/view-single-post']">
+            (click)="viewSinglePost(post)">
             <nz-card nzTitle="{{post.title}}">
                 <p>{{post.body}}</p>
             </nz-card>

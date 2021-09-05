@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/shared/post-service/post.service';
+import { UtilService } from 'src/app/shared/util/util.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -9,7 +11,7 @@ import { PostService } from 'src/app/shared/post-service/post.service';
 export class PostListComponent implements OnInit {
   posts = []
 
-  constructor(private _postService: PostService) { }
+  constructor(private _postService: PostService, private _utilService: UtilService, private router: Router) { }
   ngOnInit(): void {
     this.getPosts()
   }
@@ -17,8 +19,13 @@ export class PostListComponent implements OnInit {
   getPosts() {
     this._postService.getAllPost().subscribe(result => {
       this.posts = result;
-      console.log(this.posts)
     })
+  }
+
+
+  viewSinglePost(post) {
+    this._utilService.singlePost.next(post)
+    this.router.navigate(['/posts/view-single-post'])
   }
 
 }
