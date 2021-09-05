@@ -21,6 +21,15 @@ export class AlbumService {
       )
   }
 
+  getAlbumPictures(): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/photos`)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+
   // Error handling 
   handleError(error) {
     let errorMessage = '';

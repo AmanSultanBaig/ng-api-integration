@@ -1,14 +1,13 @@
-<div nz-row>
-    <div nz-col nzSpan="6"> <img style="width: 200px"
-            src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-    </div>
-    <div nz-col nzSpan="6"> <img style="width: 200px"
-            src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-    </div>
-    <div nz-col nzSpan="6"> <img style="width: 200px"
-            src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-    </div>
-    <div nz-col nzSpan="6"> <img style="width: 200px"
-            src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-    </div>
+<div nz-row style="height: 400px; overflow-y: scroll" *ngIf="albumPictures.length">
+        <div *ngFor="let picture of albumPictures" nz-col nzSpan="6">
+                <nz-card nzHoverable style="width:240px; margin-top: 1rem" [nzCover]="coverTemplate">
+                        <nz-card-meta nzTitle="{{picture.title}}"></nz-card-meta>
+                </nz-card>
+                <ng-template #coverTemplate>
+                        <img alt="example" [src]="picture.thumbnailUrl" />
+                </ng-template>
+        </div>
+</div>
+<div *ngIf="!albumPictures.length">
+        <b>Note:</b> Get back with new Album Id
 </div>

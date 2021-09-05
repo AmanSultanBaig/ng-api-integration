@@ -9,4 +9,5 @@ export class UtilService {
   constructor() { }
 
   singlePost = new BehaviorSubject(null)
+  albumId = new BehaviorSubject(null)
 }
