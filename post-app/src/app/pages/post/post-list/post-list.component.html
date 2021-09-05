@@ -2,54 +2,11 @@
     <h1>All Posts</h1>
 </div>
 <div style="height: 400px; overflow-y: scroll">
-    <div nz-row [nzGutter]="8" style="margin-top: 1rem">
-        <div nz-col [nzSpan]="8" style="cursor: pointer" [routerLink]="['/posts/view-single-post']">
-            <nz-card nzTitle="Card title">
-                <p>Card content</p>
-            </nz-card>
-        </div>
-        <div nz-col [nzSpan]="8">
-            <nz-card nzTitle="Card title">
-                <p>Card content</p>
-            </nz-card>
-        </div>
-        <div nz-col [nzSpan]="8">
-            <nz-card nzTitle="Card title">
-                <p>Card content</p>
-            </nz-card>
-        </div>
-    </div>
-    <div nz-row [nzGutter]="8" style="margin-top: 1rem">
-        <div nz-col [nzSpan]="8">
-            <nz-card nzTitle="Card title">
-                <p>Card content</p>
-            </nz-card>
-        </div>
-        <div nz-col [nzSpan]="8">
-            <nz-card nzTitle="Card title">
-                <p>Card content</p>
-            </nz-card>
-        </div>
-        <div nz-col [nzSpan]="8">
-            <nz-card nzTitle="Card title">
-                <p>Card content</p>
-            </nz-card>
-        </div>
-    </div>
-    <div nz-row [nzGutter]="8" style="margin-top: 1rem">
-        <div nz-col [nzSpan]="8">
-            <nz-card nzTitle="Card title">
-                <p>Card content</p>
-            </nz-card>
-        </div>
-        <div nz-col [nzSpan]="8">
-            <nz-card nzTitle="Card title">
-                <p>Card content</p>
-            </nz-card>
-        </div>
-        <div nz-col [nzSpan]="8">
-            <nz-card nzTitle="Card title">
-                <p>Card content</p>
+    <div nz-row [nzGutter]="8">
+        <div *ngFor="let post of posts" nz-col [nzSpan]="8" style="cursor: pointer;margin-top: 1rem"
+            [routerLink]="['/posts/view-single-post']">
+            <nz-card nzTitle="{{post.title}}">
+                <p>{{post.body}}</p>
             </nz-card>
         </div>
     </div>

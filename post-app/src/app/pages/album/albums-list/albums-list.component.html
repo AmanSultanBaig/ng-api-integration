@@ -2,54 +2,10 @@
         <h1>All Albums</h1>
     </div>
     <div style="height: 400px; overflow-y: scroll">
-        <div nz-row [nzGutter]="8" style="margin-top: 1rem">
-            <div nz-col [nzSpan]="8" style="cursor: pointer" [routerLink]="['/albums/album-gallery']">
-                <nz-card nzTitle="Card title">
-                    <p>Card content</p>
-                </nz-card>
-            </div>
-            <div nz-col [nzSpan]="8">
-                <nz-card nzTitle="Card title">
-                    <p>Card content</p>
-                </nz-card>
-            </div>
-            <div nz-col [nzSpan]="8">
-                <nz-card nzTitle="Card title">
-                    <p>Card content</p>
-                </nz-card>
-            </div>
-        </div>
-        <div nz-row [nzGutter]="8" style="margin-top: 1rem">
-            <div nz-col [nzSpan]="8">
-                <nz-card nzTitle="Card title">
-                    <p>Card content</p>
-                </nz-card>
-            </div>
-            <div nz-col [nzSpan]="8">
-                <nz-card nzTitle="Card title">
-                    <p>Card content</p>
-                </nz-card>
-            </div>
-            <div nz-col [nzSpan]="8">
-                <nz-card nzTitle="Card title">
-                    <p>Card content</p>
-                </nz-card>
-            </div>
-        </div>
-        <div nz-row [nzGutter]="8" style="margin-top: 1rem">
-            <div nz-col [nzSpan]="8">
-                <nz-card nzTitle="Card title">
-                    <p>Card content</p>
-                </nz-card>
-            </div>
-            <div nz-col [nzSpan]="8">
-                <nz-card nzTitle="Card title">
-                    <p>Card content</p>
-                </nz-card>
-            </div>
-            <div nz-col [nzSpan]="8">
-                <nz-card nzTitle="Card title">
-                    <p>Card content</p>
+        <div nz-row [nzGutter]="8" >
+            <div  *ngFor="let album of albums" nz-col [nzSpan]="8" style="cursor: pointer; margin-top: 1rem" [routerLink]="['/albums/album-gallery']">
+                <nz-card nzTitle="{{album.title}}">
+                    <p>Click any of one to view their pictures</p>
                 </nz-card>
             </div>
         </div>

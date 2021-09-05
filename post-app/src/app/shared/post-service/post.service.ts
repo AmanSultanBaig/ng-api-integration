@@ -15,7 +15,7 @@ export class PostService {
 
   // get all posts
   getAllPost(): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/post`)
+    return this.httpClient.get(`${this.baseUrl}/posts`)
       .pipe(
         retry(1),
         catchError(this.handleError)
