@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AlbumsListComponent implements OnInit {
 
+  albumSubs:any;
   albums =  []
   constructor(private _albumService: AlbumService, private _utilService: UtilService, private router:Router) { }
 
@@ -18,16 +19,19 @@ export class AlbumsListComponent implements OnInit {
   }
 
   getAlbums() {
-    this._albumService.getAllAlbums().subscribe(result => {
+   this.albumSubs = this._albumService.getAllAlbums().subscribe(result => {
       this.albums = result;
     })
   }
 
-  
-
   viewPictures(album) {
     this._utilService.albumId.next(album.id)
     this.router.navigate(['/albums/album-gallery'])
+  }
+
+  ngOnDestroy() {
+    this.albumSubs.unsubscribe()
+    console.log("http call unsubscribed from albums")
   }
 
 }

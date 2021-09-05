@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PostListComponent implements OnInit {
   posts = []
+  postSubs: any
 
   constructor(private _postService: PostService, private _utilService: UtilService, private router: Router) { }
   ngOnInit(): void {
@@ -17,7 +18,7 @@ export class PostListComponent implements OnInit {
   }
 
   getPosts() {
-    this._postService.getAllPost().subscribe(result => {
+    this.postSubs = this._postService.getAllPost().subscribe(result => {
       this.posts = result;
     })
   }
@@ -25,6 +26,11 @@ export class PostListComponent implements OnInit {
   viewSinglePost(post) {
     this._utilService.singlePost.next(post)
     this.router.navigate(['/posts/view-single-post'])
+  }
+
+  ngOnDestroy() {
+    this.postSubs.unsubscribe()
+    console.log("http call unsubscribed from posts")
   }
 
 }

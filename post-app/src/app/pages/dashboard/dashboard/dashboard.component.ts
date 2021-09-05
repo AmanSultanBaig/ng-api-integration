@@ -14,6 +14,11 @@ export class DashboardComponent implements OnInit {
   photoCount: number = 0
   commentCount: number = 0
 
+  postSubs: any
+  albumSubs: any
+  photoSubs: any
+  commentSubs: any
+
   constructor(private _postService: PostService, private _albumService: AlbumService) { }
 
   ngOnInit(): void {
@@ -24,19 +29,27 @@ export class DashboardComponent implements OnInit {
   }
 
   getPostCount() {
-    this._postService.getAllPost().subscribe(posts => this.postCount = posts.length)
+    this.postSubs = this._postService.getAllPost().subscribe(posts => this.postCount = posts.length)
   }
 
   getCommentCount() {
-    this._postService.getAllComments().subscribe(comments => this.commentCount = comments.length)
+    this.commentSubs = this._postService.getAllComments().subscribe(comments => this.commentCount = comments.length)
   }
 
   getAlbumCount() {
-    this._albumService.getAllAlbums().subscribe(albums => this.albumCount = albums.length)
+    this.albumSubs = this._albumService.getAllAlbums().subscribe(albums => this.albumCount = albums.length)
   }
 
   getPhotoCount() {
-    this._albumService.getAlbumPictures().subscribe(pictures => this.photoCount = pictures.length)
+    this.photoSubs = this._albumService.getAlbumPictures().subscribe(pictures => this.photoCount = pictures.length)
+  }
+
+  ngOnDestroy() {
+    this.postSubs.unsubscribe()
+    this.photoSubs.unsubscribe()
+    this.albumSubs.unsubscribe()
+    this.commentSubs.unsubscribe()
+    console.log("http call unsubscribed from dashboard")
   }
 
 }
